@@ -1,0 +1,20 @@
+body {
+  background-image: url('https://image.freepik.com/free-vector/abstract-background-with-a-watercolor-texture_1048-2144.jpg');
+  text-align: center;
+}
+img {
+  width: 160px;
+  height: 160px;
+}
+
+img:hover {
+  width: 165px;
+  height: 165px;
+}
+
+button {
+  width: auto;
+  height: auto;
+  font-size: 20px;
+  font-family: arial;
+}

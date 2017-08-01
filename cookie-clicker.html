@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="cookie-clicker.css"
+  </head>
+  <body>
+    <h1>Cookie Clicker</h1>
+    <img id="cookie" src="http://downloadclipart.org/do-upload/clipart/2016-08/Cute_chocolate_chip_cookie_Clipart.png">
+    <h2 id="score">Cookies: 0</h2>
+
+    <!--create new things in html and code what it does in javascript-->
+    <button>Factory: 10 Cookies</button>
+    <h3>Number of Factories: 0</h3>
+    <script>
+      var cookiePic = document.getElementById('cookie')
+      var counter = document.getElementById('score')
+      // the word in variable is = to the id of the img and other java script code, makes it easier by just repeating the variable
+      var number = 0
+      var factory = document.querySelector('button')
+      //instead of using id in html, (will have name of tag)
+      var factoryNumber = 0
+      var factoryScore = document.querySelector('h3')
+      var factoryCost = 10
+
+
+
+      cookiePic.onclick = function (){
+        number = number + 1
+        counter.innerHTML = "Cookies: " + number
+      }
+
+
+      //have to change all numbers to factory cost to reduce the increased number
+      factory.onclick = function() {
+        if (number >= factoryCost) {
+          number = number - factoryCost
+          counter.innerHTML = "Cookies: " + number
+          factoryNumber++  //= same thing as factoryNumber +1
+          factoryScore.innerHTML = "Number of Factories: " + factoryNumber
+          factoryCost = factoryCost + 10
+          factory.innerHTML = "Factory: " + factoryCost + " Cookies"
+        }
+      }
+      //uses setIntervalto add cookie per second
+      setInterval(function() {
+        number = number + factoryNumber
+        counter.innerHTML = "Cookies: " + number //updating score counter
+      }, 1000)
+
+    </script>
+  </body>
+</html>
